@@ -34,7 +34,7 @@ class Job extends Component {
         const technicalStack = this.state.technicalStack;
         const missions = this.state.missions;
         return (
-            <Container>
+            <Container className="jobContainer">
                 <Header as="h2">{title}</Header>
                 <Grid container={true} divided="vertically">
                     <Grid.Row columns={2}>
@@ -65,7 +65,7 @@ class Job extends Component {
                         </Container>
                     </Grid.Row>
                 </Grid>
-            <hr/>
+                <hr/>
             </Container>
         )
     }

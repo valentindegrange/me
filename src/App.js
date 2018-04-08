@@ -12,7 +12,7 @@ const user = {
     phone: "(+33)6 1780 6702",
     title: "Valentin DEGRANGE"
 };
-const pastJobs = [{
+const jobHx = {
     title:"Full stack engineer",
     company:"Hxperience",
     location:"Paris",
@@ -21,7 +21,31 @@ const pastJobs = [{
     endDate:"Current",
     technicalStack:["Django", "AngularJS", "JIRA", "CloudFoundry"],
     missions:["IoT platform", "REST API", "Multi tenancy", "RBAC & SSO", "Third Party IoT platforms", "Devops", "Dataviz"]
-}];
+};
+
+const jobAcfal = {
+    title:"Full stack developer",
+    company:"Acfal formation",
+    location:"Lyon",
+    country:"France",
+    startDate:"Sep 2014",
+    endDate:"Aug 2015",
+    technicalStack:["PHP", "Wordpress", "Java", "HTML", "CSS"],
+    missions:["Company website", "Java application", "Improve web apps"]
+};
+
+const jobBath = {
+    title:"Web developer",
+    company:"Bath University",
+    location:"Bath",
+    country:"United Kingdoms",
+    startDate:"Feb 2012",
+    endDate:"July 2012",
+    technicalStack:[".NET", "Javascript", "HTML", "CSS"],
+    missions:["Mockup", "Platform architecture", "Weekly meetings"]
+};
+
+const pastJobs = [jobHx, jobAcfal, jobBath];
 
 class App extends Component {
     render() {
