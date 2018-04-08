@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Header, Grid} from 'semantic-ui-react'
+import {Container, Header, Grid, Accordion, Icon, Card} from 'semantic-ui-react';
 
 
 class Job extends Component {
@@ -13,7 +13,9 @@ class Job extends Component {
         const endDate = this.props.endDate;
         const technicalStack = this.props.technicalStack;
         const missions = this.props.missions;
+        const details = this.props.details;
         this.state = {
+            details: details,
             title: title,
             company: company,
             location:location,
@@ -33,6 +35,18 @@ class Job extends Component {
         const endDate = this.state.endDate;
         const technicalStack = this.state.technicalStack;
         const missions = this.state.missions;
+        const details = this.state.details;
+        let panelMissions = missions.map((mission, key) => ({
+            title: {
+                content: mission.title,
+                key: 'mission'+key
+            },
+            content: {
+                content: mission.description,
+                key: 'mission'+key
+            }
+
+        }));
         return (
             <Container className="jobContainer">
                 <Header as="h2">{title}</Header>
@@ -53,16 +67,39 @@ class Job extends Component {
                             </Container>
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row>
-                        <Container>
-                            <p><strong>Technical Stack:
-                                {technicalStack.map((value, key) =>{ return (<span key={key}> {value}</span>)})}
+                    <Grid.Row columns={2}>
+                        <Grid.Column>
+                            <Container>
+                                <p><strong>Technical Stack:
+                                    {technicalStack.map((value, key) =>{ return (<span key={key}> {value}</span>)})}
 
-                            </strong></p>
-                            <div>
-                                {missions.map((value, key) => {return(<p key={key}>{value}</p>)})}
-                            </div>
-                        </Container>
+                                </strong></p>
+                                <Accordion styled panels={panelMissions}>
+                                </Accordion>
+                            </Container>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <Container>
+                                <Card>
+                                    <Card.Content>
+                                        <Card.Header>
+                                            <a href={details.website}>{company}</a>
+                                        </Card.Header>
+                                        <Card.Meta>
+                                            <span>Founded in {details.creationDate}</span>
+                                        </Card.Meta>
+                                        <Card.Description>
+                                            <p>{details.description}</p>
+                                        </Card.Description>
+                                    </Card.Content>
+                                    <Card.Content extra>
+                                        <p><span><Icon name="users"/> {details.employees} employees</span>&nbsp;
+                                            <span> <Icon name="code"/> Team of {details.itTeam} developers</span>
+                                        </p>
+                                    </Card.Content>
+                                </Card>
+                            </Container>
+                        </Grid.Column>
                     </Grid.Row>
                 </Grid>
                 <hr/>
