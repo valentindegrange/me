@@ -1,5 +1,5 @@
 {
-  "homepage": "http://valentindegrange.github.io/react-pages",
+  "homepage": "https://valentindegrange.github.io/react-pages",
   "name": "react-pages",
   "version": "0.1.0",
   "private": true,
@@ -13,7 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build", 
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
