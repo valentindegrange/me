@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Container, Header, Grid, Accordion, Icon, Card} from 'semantic-ui-react';
+import {Container, Header, Grid, Accordion, Icon, Card, Label, Popup} from 'semantic-ui-react';
+import './Job.css'
 
 
 class Job extends Component {
@@ -47,6 +48,25 @@ class Job extends Component {
             }
 
         }));
+        let companyCard =
+            <Card>
+                <Card.Content>
+                    <Card.Header>
+                        <a href={details.website} target="_blank">{company}</a>
+                    </Card.Header>
+                    <Card.Meta>
+                        <span>Founded in {details.creationDate}</span>
+                    </Card.Meta>
+                    <Card.Description>
+                        <p>{details.description}</p>
+                    </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                    <p><span><Icon name="users"/> {details.employees} employees</span>&nbsp;
+                        <span> <Icon name="code"/> Team of {details.itTeam} developers</span>
+                    </p>
+                </Card.Content>
+            </Card>;
         return (
             <Container className="jobContainer">
                 <Header as="h2">{title}</Header>
@@ -55,7 +75,15 @@ class Job extends Component {
                         <Grid.Column>
                             <Container textAlign="left">
                                 <div>
-                                    <p>{company} - {location} ({country})</p>
+                                    <Popup
+                                        key={company}
+                                        trigger={<strong className="clickable">{company} - {location} ({country})</strong>}
+                                        on="click"
+                                        content={companyCard}
+                                        hideOnScroll
+                                    >
+
+                                    </Popup>
                                 </div>
                             </Container>
                         </Grid.Column>
@@ -70,34 +98,18 @@ class Job extends Component {
                     <Grid.Row columns={2}>
                         <Grid.Column>
                             <Container>
-                                <p><strong>Technical Stack:
-                                    {technicalStack.map((value, key) =>{ return (<span key={key}> {value}</span>)})}
+                                <p>
+                                    {technicalStack.map((value, key) =>{
+                                        return (<Label color="black" key={key}> {value}</Label>)
+                                    })}
 
-                                </strong></p>
+                                </p>
                                 <Accordion styled panels={panelMissions}>
                                 </Accordion>
                             </Container>
                         </Grid.Column>
                         <Grid.Column>
                             <Container>
-                                <Card>
-                                    <Card.Content>
-                                        <Card.Header>
-                                            <a href={details.website}>{company}</a>
-                                        </Card.Header>
-                                        <Card.Meta>
-                                            <span>Founded in {details.creationDate}</span>
-                                        </Card.Meta>
-                                        <Card.Description>
-                                            <p>{details.description}</p>
-                                        </Card.Description>
-                                    </Card.Content>
-                                    <Card.Content extra>
-                                        <p><span><Icon name="users"/> {details.employees} employees</span>&nbsp;
-                                            <span> <Icon name="code"/> Team of {details.itTeam} developers</span>
-                                        </p>
-                                    </Card.Content>
-                                </Card>
                             </Container>
                         </Grid.Column>
                     </Grid.Row>

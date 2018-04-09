@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Heading from './Heading.js'
 import Job from './Job.js'
+import Skills from './Skills.js'
 
 const user = {
     address: "93 rue ordener",
@@ -11,6 +12,66 @@ const user = {
     mail: "valentin.degrange@gmail.com",
     phone: "(+33)6 1780 6702",
     title: "Valentin DEGRANGE"
+};
+const skills = {
+    backend: {
+        technologies: [
+            {
+                name: "Python",
+                icon: "python",
+                frameworks: ["Django", "Django REST framework", "pytest"]
+            },
+            {
+                name: "PHP",
+                icon: "php"
+            }
+        ]
+    },
+    frontend: {
+        technologies: [
+            {
+                name: "HTML",
+                icon: "html5",
+                frameworks: ["Bootstrap"]
+            },
+            {
+                name: "Javascript",
+                icon: "angular",
+                frameworks: ["AngularJS", "Highcharts", "Restangular", "UI-Router"]
+
+            },
+            {
+                name: "CSS",
+                icon: "less",
+                frameworks: ["less"]
+            }
+        ]
+    },
+    developmentTools: [
+        {
+            name: "Git/Github",
+            icon: "github"
+        },
+        {
+            name: "JIRA"
+        },
+        {
+            name: "Gulp",
+            icon: "gulp"
+        },
+        {
+            name: "Bash",
+            icon: "terminal"
+        },
+        {
+            name: "CloudFoundry"
+        },
+        {
+            name: "IBM Cloud"
+        }
+    ],
+    databases: ["Postgresql", "CouchDB"],
+    manager: {}
 };
 const jobHx = {
     title:"Full stack engineer",
@@ -113,6 +174,13 @@ class App extends Component {
             <div>
                 <Heading title={user.title} address={user.address} city={user.city} country={user.country} phone={user.phone} mail={user.mail} github={user.github}/>
                 <hr/>
+                {/*<Skills*/}
+                    {/*frontend={skills.frontend}*/}
+                    {/*backend={skills.backend}*/}
+                    {/*developmentTools={skills.developmentTools}*/}
+                    {/*manager={skills.manager}*/}
+                    {/*databases={skills.databases}*/}
+                {/*/>*/}
                 {pastJobs.map((job, key) => {
                     return <Job key={key} title={job.title}
                                 company={job.company} location={job.location}
