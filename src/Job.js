@@ -62,8 +62,11 @@ class Job extends Component {
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                    <p><span><Icon name="users"/> {details.employees} employees</span>&nbsp;
-                        <span> <Icon name="code"/> Team of {details.itTeam} developers</span>
+                    <p>
+                        <span><Icon name="users"/> {details.employees} employees</span>
+                        <p>
+                    </p>
+                        <span> <Icon name="code"/> {details.itTeam} developers team</span>
                     </p>
                 </Card.Content>
             </Card>;

@@ -84,30 +84,32 @@ const jobHx = {
     missions:[
         {
             title:"IoT platform",
-            description:"Design, develop and maintain an IoT platform that connects & monitors sensors, collects & processes data, allows usage analysis, calculates KPIs. Build & adapt the product for clients such as Accor, Renault, Atlantic, Schneider Electric"},
+            description:"Designing, developing and maintaining an IoT platform that connects & monitors sensors, collects & processes data, for further usage analysis / KPI computations." +
+            " Building and  adapting the product for clients such as Accor, Renault, Atlantic, Schneider Electric."
+        },
         {
             title:"REST API",
-            description: "Implement a REST API to allow communication between front-end & back-end of the product"
+            description: "Designing and implementing a REST API to allow communications between front-end & back-end."
         },
         {
             title:"Multi tenancy",
-            description: "Design and and implement multi tenancy to allow multiple clients handling on same instances"
+            description: "Designing  and implementing multi tenancy to handle multiple clients on same instance."
         },
         {
             title:"RBAC & SSO",
-            description: "Implement RBAC and SSO, dealing with more than 100 users per clients"
+            description: "Implementing RBAC and SSO, handling hundreds of users per clients."
         },
         {
             title:"Third Party IoT platforms",
-            description: "Integrate Third Party IoT platforms into the product. Platforms such as Sigfox, Orange, Kerlink, Objenious"
+            description: "Integrating Third Party IoT platforms in the product. Platforms such as Sigfox, Orange, Kerlink, Objenious."
         },
         {
             title:"DevOps",
-            description: "Automate front-end production-reading building and deployments, reducing deployment routines time by 6"
+            description: "Automating front-end production-reading builds and deployments, reducing deployment routines time by 6."
         },
         {
             title:"Datavisualization",
-            description: "Handle sensors data querying and front end data visualization with NoSQL databases containing each more than 20 million data"
+            description: "Handling sensors data querying and front end data visualization with NoSQL databases containing each more than 20 million data."
         }
     ],
     details: {
@@ -129,9 +131,9 @@ const jobAcfal = {
     endDate:"Aug 2015",
     technicalStack:["PHP", "Wordpress", "Java", "HTML", "CSS"],
     missions:[
-        {title:"Company website", description: "Design, develop and deploy the new website of the company. It was meant to sell professional trainings. After being online it was having more than 350 daily users, a 50% increase from previous version"},
-        {title:"Java application", description: "Create Java application to import and export data from company database to french government database.  Automating the weekly data exporting for more than 80 different candidates"},
-        {title:"Improve web apps", description: "Improve existing web applications according to users requirements and used by 60 persons"}
+        {title:"Company website", description: "Designed, implemented  and deployed the new company website(selling professional trainings)resulting in a 50% increasement in daily users."},
+        {title:"Java application", description: "Created a Java application to import and export data from company database to french government database.  Automating the weekly data export for more than 80 different candidates."},
+        {title:"Improve web apps", description: "Improved existing web applications used by 60 persons according to their feedbacks. "}
     ],
     details: {
         employees: 60,
@@ -152,9 +154,9 @@ const jobBath = {
     endDate:"July 2012",
     technicalStack:[".NET", "Javascript", "HTML", "CSS"],
     missions:[
-        {title:"Mockup", description: "Mockup the new software downloading platform. Platform daily used by more than 10.000 users"},
-        {title:"Platform architecture", description: "Create the architecture of the platform with the whole team in charge of the project"},
-        {title:"Weekly meetings", description: "Analyse the needs of the platform. Weekly meetings with students, teachers and software managers"},
+        {title:"Mockup", description: "Mocked-up the new software downloading platform used by more than 10.000 users daily."},
+        {title:"Weekly meetings", description: "Analysed platform needs, resulting in weekly meetings with students, teachers and software managers."},
+        {title:"Platform architecture", description: "Created the architecture of the platform collaborating with the whole team in charge of the project."}
     ],
     details: {
         employees: "+100",
