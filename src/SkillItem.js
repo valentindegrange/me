@@ -22,28 +22,28 @@ class SkillItem extends Component {
                 <Item.Content>
                     <Item.Header>
                         {header}
-                    </Item.Header>
-                    <Item.Meta>
                         {content.map(item => {
                             if(item.hasOwnProperty("icon")){
-                                return <Icon name={item.icon} title={item.name}/>
+                                return <span>&nbsp;<Icon name={item.icon} title={item.name}/></span>
                             }
                         })}
+                    </Item.Header>
+                    <Item.Meta>
                     </Item.Meta>
                     <Item.Description>
-                        <List>
-                            {content.map(item =>{
-                                return (
-                                    <List.Item>
-                                        <p><Icon name={item.icon}/> <strong>{item.name}</strong>
-                                        {item.frameworks ?
-                                            item.frameworks.map(framework => {return<span>{framework}</span>}) :
-                                        null}
-                                        </p>
-                                    </List.Item>
-                                )
-                            })}
-                        </List>
+                        {content.map((item, key) =>{
+                            return (
+                                <span><strong>{item.name}{item.hasOwnProperty('frameworks') ?
+                                    ' ' :(key < content.length - 1 ? ', ': ' ')}</strong>
+
+                                    <span>{item.frameworks ?(
+                                        item.frameworks.map((framework, key) => {
+                                            return(<em className="underground">{framework}{key < item.frameworks.length-1 ? ', ': ' '}</em>)
+                                        }) ):
+                                        null}</span>
+                                </span>
+                            )
+                        })}
 
                     </Item.Description>
                 </Item.Content>

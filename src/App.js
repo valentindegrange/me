@@ -70,7 +70,7 @@ const skills = {
             name: "IBM Cloud"
         }
     ],
-    databases: ["Postgresql", "CouchDB"],
+    databases: [{name: "Postgresql", icon: "database"}, {name: "CouchDB", icon:"file"}],
     manager: {}
 };
 const jobHx = {
@@ -108,7 +108,7 @@ const jobHx = {
             description: "Automating front-end production-reading builds and deployments, reducing deployment routines time by 6."
         },
         {
-            title:"Datavisualization",
+            title:"Data visualization",
             description: "Handling sensors data querying and front end data visualization with NoSQL databases containing each more than 20 million data."
         }
     ],
@@ -176,13 +176,13 @@ class App extends Component {
             <div>
                 <Heading title={user.title} address={user.address} city={user.city} country={user.country} phone={user.phone} mail={user.mail} github={user.github}/>
                 <hr/>
-                {/*<Skills*/}
-                    {/*frontend={skills.frontend}*/}
-                    {/*backend={skills.backend}*/}
-                    {/*developmentTools={skills.developmentTools}*/}
-                    {/*manager={skills.manager}*/}
-                    {/*databases={skills.databases}*/}
-                {/*/>*/}
+                <Skills
+                    frontend={skills.frontend}
+                    backend={skills.backend}
+                    developmentTools={skills.developmentTools}
+                    manager={skills.manager}
+                    databases={skills.databases}
+                />
                 {pastJobs.map((job, key) => {
                     return <Job key={key} title={job.title}
                                 company={job.company} location={job.location}

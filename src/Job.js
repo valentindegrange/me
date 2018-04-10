@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Header, Grid, Accordion, Icon, Card, Label, Popup} from 'semantic-ui-react';
+import {Container, Header, Grid, Accordion, Icon, Card, Label, Popup, Segment} from 'semantic-ui-react';
 import './Job.css'
 
 
@@ -107,7 +107,7 @@ class Job extends Component {
                                     })}
 
                                 </p>
-                                <Accordion styled panels={panelMissions}>
+                                <Accordion styled panels={panelMissions} defaultActiveIndex={0}>
                                 </Accordion>
                             </Container>
                         </Grid.Column>
