@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Message, Item, Header, Grid, Accordion, Icon, Card, Label, Popup} from 'semantic-ui-react';
+import {Container, Item, Header} from 'semantic-ui-react';
 import SkillItem from './SkillItem'
 
 class Skills extends Component {

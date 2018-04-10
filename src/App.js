@@ -3,6 +3,7 @@ import './App.css';
 import Heading from './Heading.js'
 import Job from './Job.js'
 import Skills from './Skills.js'
+import Education from './Education.js'
 
 const user = {
     address: "93 rue ordener",
@@ -170,6 +171,26 @@ const jobBath = {
 
 const pastJobs = [jobHx, jobAcfal, jobBath];
 
+const polytechDiploma = {
+    diploma: "Master of Science in Computer Sciences",
+    year: 2016,
+    school: "Engineering school Polytech Lyon",
+    city: "Lyon",
+    country: "France",
+    details: ""
+};
+
+const dutDiploma = {
+    diploma: "2 years technical degree in Computer Sciences",
+    year: 2012,
+    school: "University Institute of Technology of Burgundy",
+    city: "Dijon",
+    country: "France",
+    details: "Graduated in the top 20 (over more than 150 students)"
+};
+
+const diplomas = [polytechDiploma, dutDiploma];
+
 class App extends Component {
     render() {
         return (
@@ -190,6 +211,16 @@ class App extends Component {
                                 endDate={job.endDate} technicalStack={job.technicalStack}
                                 missions={job.missions} details={job.details}/>
                 })}
+                {diplomas.map((diploma, key) => {
+                    return <Education key={key}
+                                      diploma={diploma.diploma}
+                                      year={diploma.year}
+                                      school={diploma.school}
+                                      city={diploma.city}
+                                      country={diploma.country}
+                                      details={diploma.details}/>
+                })
+                }
             </div>
         );
     }
