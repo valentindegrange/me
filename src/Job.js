@@ -72,7 +72,7 @@ class Job extends Component {
             </Card>;
         return (
             <Container className="jobContainer">
-                <Header as="h2">{title}</Header>
+                <Header as="h3">{title}</Header>
                 <Grid container={true} divided="vertically">
                     <Grid.Row columns={2}>
                         <Grid.Column>

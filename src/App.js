@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import {Menu, Segment} from 'semantic-ui-react';
 import './App.css';
 import Heading from './Heading.js'
-import Job from './Job.js'
 import Skills from './Skills.js'
-import Education from './Education.js'
+import Educations from './Educations.js'
+import Jobs from './Jobs.js'
+
 
 const user = {
     address: "93 rue ordener",
@@ -193,34 +195,31 @@ const diplomas = [polytechDiploma, dutDiploma];
 
 class App extends Component {
     render() {
+        const jobsCmpnt = <Skills index = {0}
+                frontend={skills.frontend}
+                backend={skills.backend}
+                developmentTools={skills.developmentTools}
+                manager={skills.manager}
+                databases={skills.databases}
+            />;
+        const skillsCmpnt = <Jobs index={1} jobs={pastJobs}/>;
+        const educationsCmpnt = <Educations index={2} educations={diplomas}/>;
         return (
             <div>
                 <Heading title={user.title} address={user.address} city={user.city} country={user.country} phone={user.phone} mail={user.mail} github={user.github}/>
                 <hr/>
-                <Skills
-                    frontend={skills.frontend}
-                    backend={skills.backend}
-                    developmentTools={skills.developmentTools}
-                    manager={skills.manager}
-                    databases={skills.databases}
-                />
-                {pastJobs.map((job, key) => {
-                    return <Job key={key} title={job.title}
-                                company={job.company} location={job.location}
-                                country={job.country} startDate={job.startDate}
-                                endDate={job.endDate} technicalStack={job.technicalStack}
-                                missions={job.missions} details={job.details}/>
-                })}
-                {diplomas.map((diploma, key) => {
-                    return <Education key={key}
-                                      diploma={diploma.diploma}
-                                      year={diploma.year}
-                                      school={diploma.school}
-                                      city={diploma.city}
-                                      country={diploma.country}
-                                      details={diploma.details}/>
-                })
-                }
+                <Menu pointing>
+                    <Menu.Item name="Skills"/>
+                    <Menu.Item name="Work experiences"/>
+                    <Menu.Item name="Educations"/>
+                </Menu>
+                {jobsCmpnt}
+                {skillsCmpnt}
+                {educationsCmpnt}
+                {/*<Segment>*/}
+                    {/**/}
+                {/*</Segment>*/}
+
             </div>
         );
     }
