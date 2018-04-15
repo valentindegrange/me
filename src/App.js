@@ -14,7 +14,8 @@ const user = {
     github: "valentindegrange",
     mail: "valentin.degrange@gmail.com",
     phone: "(+33)6 1780 6702",
-    title: "Valentin DEGRANGE"
+    title: "Valentin DEGRANGE",
+    quote: "There is no problem. There is always a solution to be found"
 };
 const skills = {
     backend: {
@@ -194,31 +195,43 @@ const dutDiploma = {
 const diplomas = [polytechDiploma, dutDiploma];
 
 class App extends Component {
+    state = {activeItem: 'Skills'};
+
+    handleItemClick = (e, { name }) => {
+        this.setState({ activeItem: name});
+    };
+
     render() {
-        const jobsCmpnt = <Skills index = {0}
-                frontend={skills.frontend}
-                backend={skills.backend}
-                developmentTools={skills.developmentTools}
-                manager={skills.manager}
-                databases={skills.databases}
-            />;
-        const skillsCmpnt = <Jobs index={1} jobs={pastJobs}/>;
-        const educationsCmpnt = <Educations index={2} educations={diplomas}/>;
+        const activeItem = this.state.activeItem;
+        const skillComponent = <Skills index = {0}
+                                  frontend={skills.frontend}
+                                  backend={skills.backend}
+                                  developmentTools={skills.developmentTools}
+                                  manager={skills.manager}
+                                  databases={skills.databases}
+        />;
+        const jobComponent = <Jobs index={1} jobs={pastJobs}/>;
+        const educationComponent = <Educations index={2} educations={diplomas}/>;
+        let mapCmpnt = {
+            "Skills": skillComponent,
+            "Work Experiences": jobComponent,
+            "Educations": educationComponent
+        };
         return (
             <div>
-                <Heading title={user.title} address={user.address} city={user.city} country={user.country} phone={user.phone} mail={user.mail} github={user.github}/>
+                <Heading title={user.title} address={user.address} city={user.city} country={user.country} phone={user.phone} mail={user.mail} github={user.github} quote={user.quote}/>
                 <hr/>
                 <Menu pointing>
-                    <Menu.Item name="Skills"/>
-                    <Menu.Item name="Work experiences"/>
-                    <Menu.Item name="Educations"/>
+                    <Menu.Item name="Skills"
+                               active={activeItem === 'Skills'} onClick={this.handleItemClick}/>
+                    <Menu.Item name="Work Experiences"
+                               active={activeItem === 'Work Experiences'} onClick={this.handleItemClick}/>
+                    <Menu.Item name="Educations"
+                               active={activeItem === 'Educations'} onClick={this.handleItemClick}/>
                 </Menu>
-                {jobsCmpnt}
-                {skillsCmpnt}
-                {educationsCmpnt}
-                {/*<Segment>*/}
-                    {/**/}
-                {/*</Segment>*/}
+                <Segment>
+                    {mapCmpnt[activeItem]}
+                </Segment>
 
             </div>
         );

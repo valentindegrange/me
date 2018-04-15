@@ -11,6 +11,7 @@ class Heading extends Component {
         const github = this.props.github;
         const phone = this.props.phone;
         const title = this.props.title;
+        const quote = this.props.quote;
         this.state = {
             address:address,
             city: city,
@@ -18,7 +19,8 @@ class Heading extends Component {
             github:github,
             mail:mail,
             phone:phone,
-            title:title
+            title:title,
+            quote:quote
         }
     }
     render(){
@@ -30,6 +32,7 @@ class Heading extends Component {
         const mail = this.state.mail;
         const phone = this.state.phone;
         const title = this.state.title;
+        const quotes = this.state.quote.split('.');
         const gmaps = address.split(' ').join('+') + ',' + city.split(' ').join('+');
         return (
             <Grid container={true} divided="vertically">
@@ -48,7 +51,17 @@ class Heading extends Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Container textAlign="center">
-                            <Header as='h1'>{title}</Header>
+                            <Header as='h1'>
+                                {title}
+                                <Header.Subheader>
+                                    <Icon name="quote left"/>
+
+                                    {quotes.map((item, key) => {
+                                        return <span key={key}>{item}{key < quotes.length - 1? <br/>: ' ' }</span>
+                                    })}
+                                    <Icon name="quote right"/>
+                                </Header.Subheader>
+                            </Header>
                         </Container>
                     </Grid.Column>
                     <Grid.Column>
