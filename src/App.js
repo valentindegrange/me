@@ -5,6 +5,7 @@ import Heading from './Heading.js'
 import Skills from './Skills.js'
 import Educations from './Educations.js'
 import Jobs from './Jobs.js'
+import Trips from './Trips.js'
 
 
 const user = {
@@ -194,8 +195,44 @@ const dutDiploma = {
 
 const diplomas = [polytechDiploma, dutDiploma];
 
+class Trip {
+    constructor(title, country, icon, year, month, cities, details, image, pictures) {
+        this.title = title;
+        this.country = country;
+        this.icon = icon;
+        this.year = year;
+        this.month = month;
+        this.cities = cities;
+        this.details = details;
+        this.image = image;
+        this.pictures = pictures;
+    }
+}
+
+const laplandTrip = new Trip("Lapland", "Finland", "finland", 2018, "03",
+    ["Kittila", "Muonio", "Rovaniemi", "Enontekio"], "Road trip. Snow mobile. Reindeers. Northern lights. ",
+    "/static/media/finland.png", ["/images/details/", "/images/details/", "/images/details/"]);
+const newYorkTrip = new Trip("New York", "United States", "america", 2017, "11",
+    ["New York"], "Musuems. NBA. Liberty statue.",
+    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+const indiaTrip = new Trip("India", "India", "india", 2017, "08",
+    ["Mumbai", "Goa", "Hampi", "Madurai", "Cochin", "Munnar", "Kumily"], "Train & buses trip. Temples. Animals. Palaces.",
+    "/images/",  ["/images/details/", "/images/details/", "/images/details/"]);
+const jordanTrip = new Trip("Jordan", "Jordan", "jordan", 2017, "05",
+    ["Madaba", "Dead Sea", "Mujib", "Aqaba", "Wadi Rum"], "Road trip. Desert. Canyoning. Villages. Diving",
+    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+const russiaTrip = new Trip("St Petersburg", "Russia", "russia", 2017, "01",
+    ["St Petersburg"], "Museum. Churches. Palaces.",
+    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+const southAfricaTrip = new Trip("South Africa", "South Africa", "za", 2016, "08",
+    ["Johannesburg", "Durban", "Sainte Lucie", "Shazibe", "Malelane", "Kruger National Park", "Blyde River canyon" ],
+    "Road trip. Animals. Mountains. National park. Hippopotamus. Canyons. Diving",
+    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+
+const trips = [laplandTrip, newYorkTrip, indiaTrip, jordanTrip, russiaTrip, southAfricaTrip];
+
 class App extends Component {
-    state = {activeItem: 'Skills'};
+    state = {activeItem: 'Trips'};
 
     handleItemClick = (e, { name }) => {
         this.setState({ activeItem: name});
@@ -212,13 +249,16 @@ class App extends Component {
         />;
         const jobComponent = <Jobs index={1} jobs={pastJobs}/>;
         const educationComponent = <Educations index={2} educations={diplomas}/>;
+        const tripComponent = <Trips index={3} trips={trips}/>;
         let mapCmpnt = {
             "Skills": skillComponent,
             "Work Experiences": jobComponent,
-            "Educations": educationComponent
+            "Educations": educationComponent,
+            "Trips": tripComponent
         };
         return (
             <div>
+
                 <Heading title={user.title} address={user.address} city={user.city} country={user.country} phone={user.phone} mail={user.mail} github={user.github} quote={user.quote}/>
                 <hr/>
                 <Menu pointing>
@@ -228,6 +268,8 @@ class App extends Component {
                                active={activeItem === 'Work Experiences'} onClick={this.handleItemClick}/>
                     <Menu.Item name="Educations"
                                active={activeItem === 'Educations'} onClick={this.handleItemClick}/>
+                    <Menu.Item name="Trips"
+                               active={activeItem === 'Trips'} onClick={this.handleItemClick}/>
                 </Menu>
                 <Segment>
                     {mapCmpnt[activeItem]}
