@@ -44,7 +44,7 @@ class Job extends Component {
             },
             content: {
                 content: mission.description,
-                key: 'mission'+key
+                key: 'content_mission'+key
             }
 
         }));
@@ -64,8 +64,9 @@ class Job extends Component {
                 <Card.Content extra>
                     <p>
                         <span><Icon name="users"/> {details.employees} employees</span>
-                        <p>
+
                     </p>
+                    <p>
                         <span> <Icon name="code"/> {details.itTeam} developers team</span>
                     </p>
                 </Card.Content>
@@ -101,12 +102,12 @@ class Job extends Component {
                     <Grid.Row columns={2}>
                         <Grid.Column>
                             <Container>
-                                <p>
+                                <div>
                                     {technicalStack.map((value, key) =>{
                                         return (<Label color="black" key={key}> {value}</Label>)
                                     })}
 
-                                </p>
+                                </div>
                                 <Accordion styled panels={panelMissions} defaultActiveIndex={0}>
                                 </Accordion>
                             </Container>
