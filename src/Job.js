@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Header, Grid, Accordion, Icon, Card, Label, Popup, Segment} from 'semantic-ui-react';
+import {Container, Header, Grid, Accordion, Icon, Card, Label, Popup} from 'semantic-ui-react';
 import './Job.css'
 
 

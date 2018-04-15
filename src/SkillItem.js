@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Item, Icon, List} from 'semantic-ui-react';
+import {Item, Icon} from 'semantic-ui-react';
 
 
 class SkillItem extends Component {
@@ -22,10 +22,11 @@ class SkillItem extends Component {
                 <Item.Content>
                     <Item.Header>
                         {header}
-                        {content.map(item => {
+                        {content.map((item, key) => {
                             if(item.hasOwnProperty("icon")){
-                                return <span>&nbsp;<Icon name={item.icon} title={item.name}/></span>
+                                return <span key={key}>&nbsp;<Icon name={item.icon} title={item.name}/></span>
                             }
+                            return null;
                         })}
                     </Item.Header>
                     <Item.Meta>
@@ -33,12 +34,12 @@ class SkillItem extends Component {
                     <Item.Description>
                         {content.map((item, key) =>{
                             return (
-                                <span><strong>{item.name}{item.hasOwnProperty('frameworks') ?
+                                <span key={key}><strong>{item.name}{item.hasOwnProperty('frameworks') ?
                                     ' ' :(key < content.length - 1 ? ', ': ' ')}</strong>
 
                                     <span>{item.frameworks ?(
                                         item.frameworks.map((framework, key) => {
-                                            return(<em className="underground">{framework}{key < item.frameworks.length-1 ? ', ': ' '}</em>)
+                                            return(<em key={key} className="underground">{framework}{key < item.frameworks.length-1 ? ', ': ' '}</em>)
                                         }) ):
                                         null}</span>
                                 </span>

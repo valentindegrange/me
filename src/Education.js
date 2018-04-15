@@ -31,7 +31,10 @@ class Education extends Component {
 
         return (
             <Container>
-                <Header as="h3">{diploma}</Header>
+                <Header as="h3">
+                    {diploma}
+                    {details === null ? '' : <Header.Subheader>{details}</Header.Subheader>}
+                </Header>
                 <Grid container={true} divided="vertically">
                     <Grid.Row columns={2}>
                         <Grid.Column>

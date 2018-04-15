@@ -24,13 +24,7 @@ class Skills extends Component {
         const backend = this.state.backend;
         const frontend = this.state.frontend;
         const developmentTools = this.state.developmentTools;
-        const manager = this.state.manager;
         const databases = this.state.databases;
-        const skillsList = [
-            "Frontend: " + frontend.technologies.map(tech => {return tech.name}).join(', '),
-            "Backend: " + backend.technologies.map(tech => {return tech.name}).join(', '),
-            databases.join(', ')
-        ];
         return (
             <Container>
                 <Header as="h2">Skills</Header>
