@@ -99,21 +99,17 @@ class Job extends Component {
                             </Container>
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row columns={2}>
+                    <Grid.Row>
                         <Grid.Column>
                             <Container>
                                 <div>
                                     {technicalStack.map((value, key) =>{
                                         return (<Label color="black" key={key}> {value}</Label>)
                                     })}
-
+                                    <br/>
                                 </div>
                                 <Accordion styled panels={panelMissions} defaultActiveIndex={0}>
                                 </Accordion>
-                            </Container>
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Container>
                             </Container>
                         </Grid.Column>
                     </Grid.Row>

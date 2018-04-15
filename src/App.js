@@ -15,7 +15,7 @@ const user = {
     mail: "valentin.degrange@gmail.com",
     phone: "(+33)6 1780 6702",
     title: "Valentin DEGRANGE",
-    quote: "There is no Problem. There is always a Solution to be found"
+    quote: "There is no problem. There is always a solution to be found."
 };
 const skills = {
     backend: {

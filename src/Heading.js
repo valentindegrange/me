@@ -32,7 +32,7 @@ class Heading extends Component {
         const mail = this.state.mail;
         const phone = this.state.phone;
         const title = this.state.title;
-        const quotes = this.state.quote.split('.');
+        const quote = this.state.quote;
         const gmaps = address.split(' ').join('+') + ',' + city.split(' ').join('+');
         return (
             <Grid container={true} divided="vertically">
@@ -42,8 +42,8 @@ class Heading extends Component {
                             <Container>
                                 <div className="address">
                                     <Icon name="address card"/><a href={"https://www.google.com/maps/place/" + gmaps} target="_blank" >
-                                        <span>{address}</span> - <span>{city} - ({country})</span>
-                                    </a>
+                                    <span>{address}</span> - <span>{city} - ({country})</span>
+                                </a>
                                 </div>
                             </Container>
                             <span className="phone"><Icon name="phone" />{phone}</span>
@@ -53,14 +53,6 @@ class Heading extends Component {
                         <Container textAlign="center">
                             <Header as='h1'>
                                 {title}
-                                <Header.Subheader>
-                                    <Icon name="quote left"/>
-
-                                    {quotes.map((item, key) => {
-                                        return <span key={key}>{item}{key < quotes.length - 1? <br/>: ' ' }</span>
-                                    })}
-                                    <Icon name="quote right"/>
-                                </Header.Subheader>
                             </Header>
                         </Container>
                     </Grid.Column>
@@ -68,6 +60,17 @@ class Heading extends Component {
                         <Container textAlign="right">
                             <span className="mail"><Icon name="mail" /><a href={"mailto:" + mail}>{mail}</a></span><br/>
                             <span className="github"><Icon name="github"/><a href={"https://github.com/" + github} target="_blank">{github}</a></span>
+                        </Container>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <Container textAlign="center">
+                            <Header as="h2">
+                                <Header.Subheader>
+                                    <span><Icon name="quote left"/>&nbsp;{quote}&nbsp;<Icon name="quote right"/></span>
+                                </Header.Subheader>
+                            </Header>
                         </Container>
                     </Grid.Column>
                 </Grid.Row>
