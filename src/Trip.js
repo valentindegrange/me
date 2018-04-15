@@ -39,8 +39,8 @@ class Trip extends Component {
         const pictures = this.state.pictures;
         return (
             <Card>
+                <Image src={image}/>
                 <Card.Content>
-                    <Image src={image}/>
                     <Card.Header>
                         <Flag name={icon} title={country}/>{title}
 
@@ -58,7 +58,7 @@ class Trip extends Component {
                 <Card.Content extra>
                     <Image.Group>
                         {pictures.map((img, key) => {
-                            return <Image key={key} src={img}/>
+                            return (<Image key={key} src={img} size="tiny" rounded/>)
                         })}
                     </Image.Group>
                 </Card.Content>

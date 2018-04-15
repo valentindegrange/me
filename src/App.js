@@ -6,6 +6,10 @@ import Skills from './Skills.js'
 import Educations from './Educations.js'
 import Jobs from './Jobs.js'
 import Trips from './Trips.js'
+import fin from './images/finland.png'
+import fin1 from './images/details/fin1.png'
+import fin2 from './images/details/fin2.png'
+import fin3 from './images/details/fin3.png'
 
 
 const user = {
@@ -16,7 +20,7 @@ const user = {
     mail: "valentin.degrange@gmail.com",
     phone: "(+33)6 1780 6702",
     title: "Valentin DEGRANGE",
-    quote: "There is no problem. There is always a solution to be found."
+    quote: "There is no problem. There is only a solution to be found."
 };
 const skills = {
     backend: {
@@ -211,7 +215,7 @@ class Trip {
 
 const laplandTrip = new Trip("Lapland", "Finland", "finland", 2018, "03",
     ["Kittila", "Muonio", "Rovaniemi", "Enontekio"], "Road trip. Snow mobile. Reindeers. Northern lights. ",
-    "/static/media/finland.png", ["/images/details/", "/images/details/", "/images/details/"]);
+    fin, [fin1, fin2, fin3]);
 const newYorkTrip = new Trip("New York", "United States", "america", 2017, "11",
     ["New York"], "Musuems. NBA. Liberty statue.",
     "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
