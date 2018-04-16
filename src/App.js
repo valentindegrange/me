@@ -7,9 +7,29 @@ import Educations from './Educations.js'
 import Jobs from './Jobs.js'
 import Trips from './Trips.js'
 import fin from './images/finland.png'
-import fin1 from './images/details/fin1.png'
-import fin2 from './images/details/fin2.png'
-import fin3 from './images/details/fin3.png'
+import fin1 from './images/details/fin1.jpg'
+import fin2 from './images/details/fin2.jpg'
+import fin3 from './images/details/fin3.jpg'
+import us from './images/us.jpg'
+import us1 from './images/details/us1.jpg'
+import us2 from './images/details/us2.jpg'
+import us3 from './images/details/us3.jpg'
+import india from './images/india.jpg'
+import india1 from './images/details/india1.jpg'
+import india2 from './images/details/india2.jpg'
+import india3 from './images/details/india3.jpg'
+import jordan from './images/jordan.jpg'
+import jordan1 from './images/details/jordan1.jpg'
+import jordan2 from './images/details/jordan2.jpg'
+import jordan3 from './images/details/jordan3.jpg'
+import russia from './images/russia.jpg'
+import russia1 from './images/details/russia1.jpg'
+import russia2 from './images/details/russia2.jpg'
+import russia3 from './images/details/russia3.jpg'
+import africa from './images/africa.jpg'
+import africa1 from './images/details/africa1.jpg'
+import africa2 from './images/details/africa2.jpg'
+import africa3 from './images/details/africa3.jpg'
 
 
 const user = {
@@ -218,20 +238,20 @@ const laplandTrip = new Trip("Lapland", "Finland", "finland", 2018, "03",
     fin, [fin1, fin2, fin3]);
 const newYorkTrip = new Trip("New York", "United States", "america", 2017, "11",
     ["New York"], "Musuems. NBA. Liberty statue.",
-    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+    us, [us1, us2, us3]);
 const indiaTrip = new Trip("India", "India", "india", 2017, "08",
     ["Mumbai", "Goa", "Hampi", "Madurai", "Cochin", "Munnar", "Kumily"], "Train & buses trip. Temples. Animals. Palaces.",
-    "/images/",  ["/images/details/", "/images/details/", "/images/details/"]);
+    india,  [india1, india2, india3]);
 const jordanTrip = new Trip("Jordan", "Jordan", "jordan", 2017, "05",
     ["Madaba", "Dead Sea", "Mujib", "Aqaba", "Wadi Rum"], "Road trip. Desert. Canyoning. Villages. Diving",
-    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+    jordan, [jordan1, jordan2, jordan3]);
 const russiaTrip = new Trip("St Petersburg", "Russia", "russia", 2017, "01",
     ["St Petersburg"], "Museum. Churches. Palaces.",
-    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+    russia, [russia1, russia2, russia3]);
 const southAfricaTrip = new Trip("South Africa", "South Africa", "za", 2016, "08",
     ["Johannesburg", "Durban", "Sainte Lucie", "Shazibe", "Malelane", "Kruger National Park", "Blyde River canyon" ],
     "Road trip. Animals. Mountains. National park. Hippopotamus. Canyons. Diving",
-    "/images/", ["/images/details/", "/images/details/", "/images/details/"]);
+    africa, [africa1, africa2, africa3]);
 
 const trips = [laplandTrip, newYorkTrip, indiaTrip, jordanTrip, russiaTrip, southAfricaTrip];
 
