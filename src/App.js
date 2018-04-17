@@ -256,7 +256,7 @@ const southAfricaTrip = new Trip("South Africa", "South Africa", "za", 2016, "08
 const trips = [laplandTrip, newYorkTrip, indiaTrip, jordanTrip, russiaTrip, southAfricaTrip];
 
 class App extends Component {
-    state = {activeItem: 'Work experience'};
+    state = {activeItem: 'Work Experience'};
 
     handleItemClick = (e, { name }) => {
         this.setState({ activeItem: name});
