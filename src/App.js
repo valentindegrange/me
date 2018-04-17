@@ -6,7 +6,7 @@ import Skills from './Skills.js'
 import Educations from './Educations.js'
 import Jobs from './Jobs.js'
 import Trips from './Trips.js'
-import fin from './images/finland.png'
+import fin from './images/finland.jpg'
 import fin1 from './images/details/fin1.jpg'
 import fin2 from './images/details/fin2.jpg'
 import fin3 from './images/details/fin3.jpg'
@@ -256,7 +256,7 @@ const southAfricaTrip = new Trip("South Africa", "South Africa", "za", 2016, "08
 const trips = [laplandTrip, newYorkTrip, indiaTrip, jordanTrip, russiaTrip, southAfricaTrip];
 
 class App extends Component {
-    state = {activeItem: 'Trips'};
+    state = {activeItem: 'Work experience'};
 
     handleItemClick = (e, { name }) => {
         this.setState({ activeItem: name});
@@ -276,8 +276,8 @@ class App extends Component {
         const tripComponent = <Trips index={3} trips={trips}/>;
         let mapCmpnt = {
             "Skills": skillComponent,
-            "Work Experiences": jobComponent,
-            "Educations": educationComponent,
+            "Work Experience": jobComponent,
+            "Education": educationComponent,
             "Trips": tripComponent
         };
         return (
@@ -288,10 +288,10 @@ class App extends Component {
                 <Menu pointing>
                     <Menu.Item name="Skills"
                                active={activeItem === 'Skills'} onClick={this.handleItemClick}/>
-                    <Menu.Item name="Work Experiences"
-                               active={activeItem === 'Work Experiences'} onClick={this.handleItemClick}/>
-                    <Menu.Item name="Educations"
-                               active={activeItem === 'Educations'} onClick={this.handleItemClick}/>
+                    <Menu.Item name="Work Experience"
+                               active={activeItem === 'Work Experience'} onClick={this.handleItemClick}/>
+                    <Menu.Item name="Education"
+                               active={activeItem === 'Education'} onClick={this.handleItemClick}/>
                     <Menu.Item name="Trips"
                                active={activeItem === 'Trips'} onClick={this.handleItemClick}/>
                 </Menu>
